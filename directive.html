@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="app">
+    <a :href="url">{{ url }}</a>
+    <h1 @click="number">{{ number }}</h1>
+    <h1 @click="number++">Increase</h1>
+    <h1 @click="number--">Dcrease</h1>
+    <!-- (v-on==@) -->
+
+    <form action="" @submit.prevent="number++">
+        <input type="submit">
+    </form>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            url: 'https://google.com',
+            number: 10
+
+        }
+    })
+</script>
