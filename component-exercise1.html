@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>List Laracast</title>
+
+    <style>
+        body {
+            margin: 15px;
+        }
+    </style>
+
+
+</head>
+
+<div id="app" class="container">
+    <message title="Hello World" body="lorem my name is jahid hasab shiplo"></message>
+    <message title="Hello baby" body="bla bla "></message>
+</div>
+
+
+<!-- vue cdn -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<!-- vue binding -->
+<script>
+    Vue.component("message", {
+
+        props: ['title', 'body'],
+
+        data() {
+            return {
+                isVisiable: true,
+            }
+        },
+
+        template: `
+        <article class="message" v-show="isVisiable">
+
+            <div class="message-header">
+                {{ title }}
+                <button type="button" @click="isVisiable=false">x</button>
+        
+            </div>
+
+
+            <div class="message-body">
+                {{ body }}
+            </div>
+
+
+        </article>
+
+        
+        `,
+    });
+
+
+
+    var app = new Vue({
+        el: "#app",
+
+
+    });
+</script>
+
+<body></body>
+
+</html>
