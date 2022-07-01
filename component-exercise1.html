@@ -17,28 +17,29 @@
 
 </head>
 
-<div id="app" class="container">
-    <message title="Hello World" body="lorem my name is jahid hasab shiplo"></message>
-    <message title="Hello baby" body="bla bla "></message>
-</div>
+<body>
+    <div id="app" class="container">
+        <message title="Hello World" body="lorem my name is jahid hasab shiplo"></message>
+        <message title="Hello baby" body="bla bla "></message>
+    </div>
 
 
-<!-- vue cdn -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-<!-- vue binding -->
-<script>
-    Vue.component("message", {
+    <!-- vue binding -->
+    <script>
+        Vue.component("message", {
 
-        props: ['title', 'body'],
+            props: ['title', 'body'],
 
-        data() {
-            return {
-                isVisiable: true,
-            }
-        },
+            data() {
+                return {
+                    isVisiable: true,
+                }
+            },
 
-        template: `
+            template: `
         <article class="message" v-show="isVisiable">
 
             <div class="message-header">
@@ -57,17 +58,17 @@
 
         
         `,
-    });
+        });
 
 
 
-    var app = new Vue({
-        el: "#app",
+        var app = new Vue({
+            el: "#app",
 
 
-    });
-</script>
+        });
+    </script>
 
-<body></body>
+</body>
 
 </html>

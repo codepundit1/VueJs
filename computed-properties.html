@@ -8,68 +8,68 @@
     <title> computed properties Laracast</title>
 </head>
 
-<div id="app">
-    <h1>All task</h1>
-    <ul>
-        <li v-for="task in tasks" v-text="task.description"></li>
-    </ul>
 
-
-    <h1>Complete task</h1>
-    <ul>
-        <li v-for="task in completeTasks" v-text="task.description"></li>
-    </ul>
-
-
-    <h1>Incomplete task</h1>
-    <ul>
-        <li v-for="task in incompleteTasks" v-text="task.description"></li>
-    </ul>
-
-</div>
-
-
-<!-- vue cdn -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-
-
-
-<!-- vue binding -->
-<script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-            tasks: [{
-                description: 'Go to school',
-                completed: true
-            }, {
-                description: 'Do this as soon as possible',
-                completed: false
-            }, {
-                description: 'Send me Nut',
-                completed: true
-            }, {
-                description: 'Dekhey delete kore diba',
-                completed: false
-            }, ]
-        },
-
-        computed: {
-            completeTasks() {
-                return this.tasks.filter(task => task.completed);
-            },
-
-            incompleteTasks() {
-                return this.tasks.filter(task => !task.completed);
-            }
-        }
-
-
-    });
-</script>
 
 <body>
+    <div id="app">
+        <h1>All task</h1>
+        <ul>
+            <li v-for="task in tasks" v-text="task.description"></li>
+        </ul>
 
+
+        <h1>Complete task</h1>
+        <ul>
+            <li v-for="task in completeTasks" v-text="task.description"></li>
+        </ul>
+
+
+        <h1>Incomplete task</h1>
+        <ul>
+            <li v-for="task in incompleteTasks" v-text="task.description"></li>
+        </ul>
+
+    </div>
+
+
+    <!-- vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+
+    <!-- vue binding -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                tasks: [{
+                    description: 'Go to school',
+                    completed: true
+                }, {
+                    description: 'Do this as soon as possible',
+                    completed: false
+                }, {
+                    description: 'Send me Nut',
+                    completed: true
+                }, {
+                    description: 'Dekhey delete kore diba',
+                    completed: false
+                }, ]
+            },
+
+            computed: {
+                completeTasks() {
+                    return this.tasks.filter(task => task.completed);
+                },
+
+                incompleteTasks() {
+                    return this.tasks.filter(task => !task.completed);
+                }
+            }
+
+
+        });
+    </script>
 </body>
 
 </html>
